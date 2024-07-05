@@ -3,6 +3,7 @@ from flask import request
 import webuntis
 import datetime
 import ast
+import os
 
 app = Flask(__name__)
 
@@ -55,12 +56,10 @@ def time1():
 #------------------------------------------------------------
 @app.route('/download', methods=['GET'])
 def download():
-    try:
-        # Make sure the filename is safe and join it with the download directory
-        filepath = "uploads/Wann Beginnt Schule Morgen.shortcut"
-        return send_from_directory(DOWNLOAD_DIRECTORY, "Wann Beginnt Schule Morgen.shortcut", as_attachment=True)
-    except:
-        return "file not found, sorry :)"
+    file_path = os.path.join('uploads', "Wann Beginnt Schule Morgen.shortcut")
+    if not os.path.isfile(file_path):
+        abort(404)  # Not Found
+    return send_from_directory('uploads', "Wann Beginnt Schule Morgen.shortcut", as_attachment=True)
 
 @app.route('/homepage', methods=['GET'])
 def home():
