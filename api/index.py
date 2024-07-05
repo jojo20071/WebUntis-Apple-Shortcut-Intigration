@@ -1,4 +1,4 @@
-from flask import Flask, send_file, jsonify,send_from_directory, safe_join, abort
+from flask import Flask, send_file, jsonify,send_from_directory, abort
 from flask import request
 import webuntis
 import datetime
@@ -57,7 +57,7 @@ def time1():
 def download():
     try:
         # Make sure the filename is safe and join it with the download directory
-        filepath = safe_join(DOWNLOAD_DIRECTORY, "Wann Beginnt Schule Morgen.shortcut")
+        filepath = "uploads/Wann Beginnt Schule Morgen.shortcut"
         return send_from_directory(DOWNLOAD_DIRECTORY, "Wann Beginnt Schule Morgen.shortcut", as_attachment=True)
     except:
         return "file not found, sorry :)"
