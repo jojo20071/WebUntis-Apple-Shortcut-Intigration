@@ -57,8 +57,6 @@ def time1():
 @app.route('/download', methods=['GET'])
 def download():
     file_path = os.path.join('uploads', "Wann Beginnt Schule Morgen.shortcut")
-    if not os.path.isfile(file_path):
-        return "oo"  # Not Found
     return send_from_directory('uploads', "Wann Beginnt Schule Morgen.shortcut", as_attachment=True)
 
 @app.route('/homepage', methods=['GET'])
