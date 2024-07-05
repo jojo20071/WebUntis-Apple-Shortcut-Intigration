@@ -54,6 +54,66 @@ def time1():
 
 
 #------------------------------------------------------------
+
+@app.route('/time/2', methods=['GET'])
+def time2():
+    error = ""
+    result = ""
+    ggg = []
+    if len(s.my_timetable(start=(today + datetime.timedelta(days=-2)),end=(today + datetime.timedelta(days=-2)))) != 0:
+        for ooo in ast.literal_eval(str(s.my_timetable(start=(today + datetime.timedelta(days=1)),end=(today + datetime.timedelta(days=1))))):
+            if "code" not in ooo:
+                ggg.append(int(ooo.get("startTime",0)))
+
+
+    if len(ggg) != 0:
+        if len(str(min(ggg))) == 3:
+            result = str(min(ggg))[0]+":"+str(min(ggg))[1]+str(min(ggg))[2]
+        else:
+            result = str(min(ggg))[0]+str(min(ggg))[1]+":"+str(min(ggg))[2]+str(min(ggg))[3]
+
+    else:
+        error = 12
+
+    data = {
+        "result": result,
+        "error" : error
+
+    }
+    return (jsonify(data))
+
+
+#------------------------------------------------------------
+
+@app.route('/time/3', methods=['GET'])
+def time3():
+    error = ""
+    result = ""
+    ggg = []
+    if len(s.my_timetable(start=(today + datetime.timedelta(days=-1)),end=(today + datetime.timedelta(days=-1)))) != 0:
+        for ooo in ast.literal_eval(str(s.my_timetable(start=(today + datetime.timedelta(days=1)),end=(today + datetime.timedelta(days=1))))):
+            if "code" not in ooo:
+                ggg.append(int(ooo.get("startTime",0)))
+
+
+    if len(ggg) != 0:
+        if len(str(min(ggg))) == 3:
+            result = str(min(ggg))[0]+":"+str(min(ggg))[1]+str(min(ggg))[2]
+        else:
+            result = str(min(ggg))[0]+str(min(ggg))[1]+":"+str(min(ggg))[2]+str(min(ggg))[3]
+
+    else:
+        error = 12
+
+    data = {
+        "result": result,
+        "error" : error
+
+    }
+    return (jsonify(data))
+
+
+#------------------------------------------------------------
 @app.route('/download', methods=['GET'])
 def download():
     #file_path = os.path.join('uploads', "sc")
