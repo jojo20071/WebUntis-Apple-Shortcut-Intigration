@@ -1,4 +1,4 @@
-from flask import Flask, send_file, jsonify
+from flask import Flask, send_file, jsonify,send_from_directory, safe_join, abort
 from flask import request
 import webuntis
 import datetime
@@ -6,7 +6,7 @@ import ast
 
 app = Flask(__name__)
 
-
+DOWNLOAD_DIRECTORY = "uploads"
 
 today = datetime.date.today()
 monday = today - datetime.timedelta(days=today.weekday())
@@ -53,7 +53,14 @@ def time1():
 
 
 #------------------------------------------------------------
-
+@app.route('/download', methods=['GET'])
+def download():
+    try:
+        # Make sure the filename is safe and join it with the download directory
+        filepath = safe_join(DOWNLOAD_DIRECTORY, "Wann Beginnt Schule Morgen.shortcut")
+        return send_from_directory(DOWNLOAD_DIRECTORY, "Wann Beginnt Schule Morgen.shortcut", as_attachment=True)
+    except FileNotFoundError:
+        return "file not found, sorry :)"
 
 @app.route('/homepage', methods=['GET'])
 def home():
