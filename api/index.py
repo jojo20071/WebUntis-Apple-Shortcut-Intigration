@@ -59,7 +59,7 @@ def download():
         # Make sure the filename is safe and join it with the download directory
         filepath = safe_join(DOWNLOAD_DIRECTORY, "Wann Beginnt Schule Morgen.shortcut")
         return send_from_directory(DOWNLOAD_DIRECTORY, "Wann Beginnt Schule Morgen.shortcut", as_attachment=True)
-    except FileNotFoundError:
+    except:
         return "file not found, sorry :)"
 
 @app.route('/homepage', methods=['GET'])
