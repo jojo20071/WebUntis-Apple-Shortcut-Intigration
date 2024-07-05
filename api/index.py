@@ -57,7 +57,7 @@ def time1():
 @app.route('/download', methods=['GET'])
 def download():
     #file_path = os.path.join('uploads', "sc")
-    path = "/uploads/sc.shortcut"
+    path = "uploads/sc.shortcut"
     return send_file(path, as_attachment=True)
 
 @app.route('/homepage', methods=['GET'])
