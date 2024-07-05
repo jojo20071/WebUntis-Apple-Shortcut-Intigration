@@ -57,7 +57,8 @@ def time1():
 @app.route('/download', methods=['GET'])
 def download():
     file_path = os.path.join('uploads', "Wann Beginnt Schule Morgen.shortcut")
-    return send_from_directory('uploads', "Wann Beginnt Schule Morgen.shortcut", as_attachment=True)
+    #return send_from_directory('uploads', "Wann Beginnt Schule Morgen.shortcut", as_attachment=True)
+    return "dl"
 
 @app.route('/homepage', methods=['GET'])
 def home():
