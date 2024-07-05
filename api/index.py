@@ -24,9 +24,35 @@ s.login()
 
 
 #------------------------------------------------------------
-@app.route('/timetable', methods=['GET'])
-def tt():
-    return str(s.my_timetable(start=(today),end=(today)))
+@app.route('/time/1', methods=['GET'])
+def time1():
+    error = ""
+    result = ""
+    ggg = []
+    if len(s.my_timetable(start=(today + datetime.timedelta(days=-3)),end=(today + datetime.timedelta(days=-3)))) != 0:
+        for ooo in ast.literal_eval(str(s.my_timetable(start=(today + datetime.timedelta(days=1)),end=(today + datetime.timedelta(days=1))))):
+            if "code" not in ooo:
+                ggg.append(int(ooo.get("startTime",0)))
+
+
+    if len(ggg) != 0:
+        if len(str(min(ggg))) == 3:
+            result = str(min(ggg))[0]+":"+str(min(ggg))[1]+str(min(ggg))[2]
+        else:
+            result = str(min(ggg))[0]+str(min(ggg))[1]+":"+str(min(ggg))[2]+str(min(ggg))[3]
+
+    else:
+        error = 12
+
+    data = {
+        "result": result,
+        "error" : error
+
+    }
+    return (jsonify(data))
+
+
+#------------------------------------------------------------
 
 
 @app.route('/homepage', methods=['GET'])
