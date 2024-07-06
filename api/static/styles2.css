@@ -10,6 +10,7 @@ body {
 }
 
 .container {
+    position: relative;
     text-align: center;
     background-color: #fff;
     padding: 20px;
@@ -54,11 +55,35 @@ p {
     opacity: 0.9;
 }
 
+.logo {
+    position: absolute;
+    bottom: 20px; 
+    right: 20px; 
+}
+
 .logo img {
     margin-top: 20px;
     max-width: 100px;
-    width: 100%;
+    width: 40%;
 }
 
 
 
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    .btn {
+        font-size: 0.9em;
+        margin: 5px 0;
+    }
+    
+    .logo img {
+        width: 50%;
+    }
+}
