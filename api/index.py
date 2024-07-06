@@ -120,7 +120,7 @@ def download():
     path = "uploads/WebUntis.shortcut"
     return send_file(path, as_attachment=True)
 
-@app.route('/homepage', methods=['GET'])
+@app.route('/', methods=['GET'])
 def home():
     return render_template('index2.html')
 
