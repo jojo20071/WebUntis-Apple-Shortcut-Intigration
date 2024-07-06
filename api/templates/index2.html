@@ -4,7 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebUntis-Apple-Shortcut-Intigration</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles5.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0.5em 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .buttons-container {
+            display: inline-block; /* Add this line */
+        }
+
+        .buttons {
+            display: inline-block;
+            vertical-align: middle; /* Align buttons with the logo */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1em;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .download-btn {
+            background-color: #007bff;
+        }
+
+        .github-btn {
+            background-color: #24292e;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .logo {
+            display: inline-block;
+            vertical-align: middle; /* Align logo with the buttons */
+            margin-left: 20px; /* Add some space between buttons and logo */
+        }
+
+        .logo img {
+            width: 40%; /* Adjust this line */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            p {
+                font-size: 1em;
+            }
+            
+            .btn {
+                font-size: 0.9em;
+                margin: 5px 0;
+            }
+            
+            .logo img {
+                width: 50%; /* Adjust this line for smaller screens if necessary */
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
