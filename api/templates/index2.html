@@ -66,15 +66,10 @@
             opacity: 0.9;
         }
 
-        .logo {
-            display: inline-block;
-            vertical-align: middle; 
-            margin-left: 0px; 
-            width: 100%;
-        }
-
-        .logo img {
-            width: 40px; 
+        .btn img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
         }
 
 
@@ -88,9 +83,7 @@
         <div class="buttons">
             <a href="/download" class="btn download-btn">Download</a>
             <a href="https://github.com/jojo20071/WebUntis-Apple-Shortcut-Intigration" class="btn github-btn">GitHub</a>
-        </div>
-        <div class="logo">
-            <img src="{{ url_for('static', filename='apple-logo.png') }}" alt="Apple Logo" >
+            <img src="{{ url_for('static', filename='apple-logo.png') }}" alt="Apple Logo" class="btn ">    
         </div>
     </div>
 </body>
