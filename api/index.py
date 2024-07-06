@@ -117,7 +117,7 @@ def time3():
 @app.route('/download', methods=['GET'])
 def download():
     #file_path = os.path.join('uploads', "sc")
-    path = "uploads/sc.shortcut"
+    path = "uploads/WebUntis.shortcut"
     return send_file(path, as_attachment=True)
 
 @app.route('/homepage', methods=['GET'])
