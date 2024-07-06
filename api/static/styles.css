@@ -13,7 +13,7 @@ body {
     text-align: center;
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
     max-width: 90%;
     margin: auto;
 }
