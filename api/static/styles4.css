@@ -10,7 +10,6 @@ body {
 }
 
 .container {
-    position: relative;
     text-align: center;
     background-color: #fff;
     padding: 20px;
@@ -55,18 +54,23 @@ p {
     opacity: 0.9;
 }
 
-.logo {
-    position: absolute;
-    bottom: 20px; 
-    right: 20px; 
-}
 
 .logo img {
     margin-top: 20px;
     max-width: 100px;
     width: 40%;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
+.logo img:hover{
+    opacity: 0.9;
+}
 
 
 @media (max-width: 600px) {
