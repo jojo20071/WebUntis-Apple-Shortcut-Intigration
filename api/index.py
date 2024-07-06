@@ -122,7 +122,7 @@ def download():
 
 @app.route('/homepage', methods=['GET'])
 def home():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 @app.route('/info', methods=['GET'])
 def info():
