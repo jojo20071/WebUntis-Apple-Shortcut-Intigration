@@ -60,18 +60,5 @@ p {
     width: 100%;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-    
-    p {
-        font-size: 1em;
-    }
-    
-    .btn {
-        font-size: 0.9em;
-        margin: 5px 0;
-    }
-}
+
 
