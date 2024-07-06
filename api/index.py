@@ -1,4 +1,4 @@
-from flask import Flask, send_file, jsonify,send_from_directory, abort
+from flask import Flask, send_file, jsonify,send_from_directory, abort, render_template
 from flask import request
 import webuntis
 import datetime
@@ -13,7 +13,7 @@ today = datetime.date.today()
 monday = today - datetime.timedelta(days=today.weekday())
 friday = monday + datetime.timedelta(days=4)
 
-s = webuntis.Session(
+s = webuntis.Session( # type: ignore
     server='https://herakles.webuntis.com',
     username='haede5044',
     password='Jojo1809!',
@@ -122,7 +122,7 @@ def download():
 
 @app.route('/homepage', methods=['GET'])
 def home():
-    return("Homepage :)")
+    return render_template('index.html')
 
 @app.route('/info', methods=['GET'])
 def info():
