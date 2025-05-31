@@ -1,3 +1,6 @@
+api down 
+
+
 ![image](https://github.com/user-attachments/assets/b214e8d8-437a-40b2-ba0b-a97df07f7d87)
 
 # WebUntis Apple Shortcut Integration
